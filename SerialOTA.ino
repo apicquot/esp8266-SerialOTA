@@ -4,10 +4,13 @@
 #include <ArduinoOTA.h>
 #include "SerialOTA.h"
 
-const char* ssid = "AlexLR";
-const char* password = "lapicqWifi";
+const char* ssid = "xxx";
+const char* password = "xxx";
 #define pin  0
 
+#define OTA_PORT      8266
+#define OTA_HOSTNAME  "myEsp8266"
+#define OTA_PASSWORD  "123"
 
 void setup() {
   Serial.begin(115200);
@@ -23,13 +26,13 @@ void setup() {
 
     
   // Port defaults to 8266
-  ArduinoOTA.setPort(8266);
+  ArduinoOTA.setPort(OTA_PORT);
 
   // Hostname defaults to esp8266-[ChipID]
-  ArduinoOTA.setHostname("Alex8266");
+  ArduinoOTA.setHostname(OTA_HOSTNAME);
 
   // No authentication by default
-  ArduinoOTA.setPassword((const char *)"lapicqWifi");
+  ArduinoOTA.setPassword((const char *)OTA_PASSWORD);
 
   ArduinoOTA.onStart([]() {
     Serial.println("Start");
