@@ -4,8 +4,9 @@
 #include <ArduinoOTA.h>
 #include "SerialOTA.h"
 
-const char* ssid = "xxx";
-const char* password = "xxx";
+const char* ssid = ".......................";
+const char* password = "....................";
+
 #define pin  0
 
 #define OTA_PORT      8266
@@ -74,7 +75,7 @@ void loop() {
   
   ArduinoOTA.handle();
   serialOTA.loop();
-  Serial.println("hello\n\r");
+  Serial.println("type any text + [enter]\n\r");
   delay(1000);
   
 }

@@ -24,6 +24,9 @@ private:
   static WiFiServer server;
   static WiFiClient clients[];
   static uint8_t  buffer[];
+  static uint8_t bufferIdx;
+  static void readData();
+  static void checkConnection();
 };
 
 
